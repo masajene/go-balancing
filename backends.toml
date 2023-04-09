@@ -1,0 +1,11 @@
+[[backends]]
+url = "https://dummyjson.com/products/1"
+weight = 3
+
+[[backends]]
+url = "https://dummyjson.com/products/2"
+weight = 2
+
+[[backends]]
+url = "https://dummyjson.com/products/3"
+weight = 1
