@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"github.com/BurntSushi/toml"
 	"io"
@@ -38,6 +39,8 @@ func main() {
 		})
 	}
 	backends = targets
+
+	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 
 	// start server
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
